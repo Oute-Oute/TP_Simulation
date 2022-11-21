@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="492b1306-db41-4521-911b-d7e9ce8202db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/event/control/AreaUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="492b1306-db41-4521-911b-d7e9ce8202db" name="Changes" comment="add AreaUpdate">
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PosteControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PosteControle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PosteReparation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PosteReparation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/event/control/FinSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/event/control/FinSimulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +58,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669047578060</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add AreaUpdate">
+      <created>1669050306090</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669050306090</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,6 +84,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="clean Event error" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean Event error" />
+    <MESSAGE value="add AreaUpdate" />
+    <option name="LAST_COMMIT_MESSAGE" value="add AreaUpdate" />
   </component>
 </project>
