@@ -1,7 +1,7 @@
 package main.java;
 
 
-import main.java.event.control.Debut;
+import main.java.event.control.DebutSimulation;
 import java.util.ArrayList;
 
 
@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public final class Scheduler {
     private static Scheduler SchedulerInstance = new Scheduler();
-    private ArrayList<Event> incomingEvent = new ArrayList();
+    private final ArrayList<Event> incomingEvent = new ArrayList<>();
     private float currentTime = 0;
 
     private Scheduler() {
@@ -77,9 +77,8 @@ public final class Scheduler {
      * Start the main.java.event when their starting time is the same as the current time.
      *
      * @param currentTime the current time
-     * @throws InterruptedException the interrupted exception
      */
-    public void startingEvent(float currentTime) throws InterruptedException {
+    public void startingEvent(float currentTime){
         int i = 0;
 
         while (i < SchedulerInstance.getNbEvent() && SchedulerInstance.incomingEvent.get(i).getStartingTime() <= currentTime) {
@@ -95,10 +94,9 @@ public final class Scheduler {
     /**
      * Pass the time in the simulation
      *
-     * @throws InterruptedException the interrupted exception
      */
-    public void passingTime() throws InterruptedException {
-        getInstance().incomingEvent.add(new Debut(getInstance().currentTime));
+    public void passingTime() {
+        getInstance().incomingEvent.add(new DebutSimulation(getInstance().currentTime));
         while (getInstance().getNbEvent() != 0) {
             getInstance().startingEvent(getInstance().getCurrentTime());
             //TODO: màj des aires
@@ -109,10 +107,8 @@ public final class Scheduler {
 
     /**
      * Start the simulation
-     *
-     * @throws InterruptedException the interrupted exception
      */
-    public static void start() throws InterruptedException {
+    public static void start() {
         getInstance().passingTime();
     }
 
