@@ -1,20 +1,30 @@
 package main.java;
 
 public class PosteReparation {
-    private Boolean isFree;
+    private Boolean free;
     private final int id;
+
+    private int queue;
+
+    public int getQueue() {
+        return queue;
+    }
+
+    public void setQueue(int queue) {
+        this.queue = queue;
+    }
 
     public PosteReparation(int id) {
         this.id = id;
-        this.isFree = true;
+        this.free = true;
     }
 
-    public Boolean getIsFree() {
-        return this.isFree;
+    public Boolean isFree() {
+        return this.free;
     }
 
     public void setIsFree(Boolean isFree) {
-        this.isFree = isFree;
+        this.free = isFree;
     }
 
     public int getId() {

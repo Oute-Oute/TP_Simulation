@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="492b1306-db41-4521-911b-d7e9ce8202db" name="Changes" comment="" />
+    <list default="true" id="492b1306-db41-4521-911b-d7e9ce8202db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/event/control/AreaUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PosteControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PosteControle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PosteReparation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PosteReparation.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +55,14 @@
       <updated>1669045254400</updated>
       <workItem from="1669045597066" duration="1061000" />
     </task>
+    <task id="LOCAL-00001" summary="clean Event error">
+      <created>1669047578060</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669047578060</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -63,5 +78,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="clean Event error" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean Event error" />
   </component>
 </project>
