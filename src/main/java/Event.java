@@ -1,13 +1,13 @@
-package event;
+package main.java;
 
 /**
- * The type event.Event.
+ * The type main.java.Event.
  */
 public abstract class Event {
     private final float startingTime;
 
     /**
-     * Instantiates a new event.Event.
+     * Instantiates a new main.java.Event.
      *
      * @param startingTime the starting time
      */
@@ -26,7 +26,7 @@ public abstract class Event {
 
     /**
      * The run method.
-     * Will be defined in every event class to run each event.
+     * Will be defined in every main.java.event class to run each main.java.event.
      */
     public abstract void run();
 }

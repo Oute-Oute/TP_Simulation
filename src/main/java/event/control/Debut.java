@@ -1,6 +1,7 @@
-package event.control;
+package main.java.event.control;
 
-import event.Event;
+
+import main.java.Event;
 
 public class Debut extends Event {
 

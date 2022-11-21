@@ -1,10 +1,12 @@
-import event.control.Debut;
-import event.Event;
+package main.java;
+
+
+import main.java.event.control.Debut;
 import java.util.ArrayList;
 
 
 /**
- * The type Scheduler.
+ * The type main.java.Scheduler.
  */
 public final class Scheduler {
     private static Scheduler SchedulerInstance = new Scheduler();
@@ -37,18 +39,18 @@ public final class Scheduler {
     }
 
     /**
-     * Gets the number of event.
+     * Gets the number of main.java.event.
      *
-     * @return the number of event
+     * @return the number of main.java.event
      */
     public int getNbEvent() {
         return this.incomingEvent.size();
     }
 
     /**
-     * Add an event to the incomingEvent arraylist.
+     * Add an main.java.event to the incomingEvent arraylist.
      *
-     * @param event the event to add.
+     * @param event the main.java.event to add.
      */
     public void addEvent(Event event) {
         if (SchedulerInstance.incomingEvent.isEmpty()) {
@@ -72,7 +74,7 @@ public final class Scheduler {
     }
 
     /**
-     * Start the event when their starting time is the same as the current time.
+     * Start the main.java.event when their starting time is the same as the current time.
      *
      * @param currentTime the current time
      * @throws InterruptedException the interrupted exception
@@ -84,6 +86,10 @@ public final class Scheduler {
             SchedulerInstance.incomingEvent.get(i).run();
             SchedulerInstance.incomingEvent.remove(i);
         }
+    }
+
+    public void cleanScheduler() {
+        SchedulerInstance.incomingEvent.clear();
     }
 
     /**
