@@ -1,21 +1,15 @@
-package oldSimu;
-
-import kfet.CoreController;
-
-import java.time.Clock;
-import java.time.Duration;
-import java.time.LocalTime;
+import event.control.Debut;
+import event.Event;
 import java.util.ArrayList;
 
 
 /**
- * The type oldSimu.Scheduler.
+ * The type Scheduler.
  */
 public final class Scheduler {
     private static Scheduler SchedulerInstance = new Scheduler();
     private ArrayList<Event> incomingEvent = new ArrayList();
-    private int currentTime = 0;
-    private int status = 0;
+    private float currentTime = 0;
 
     private Scheduler() {
     }
@@ -38,7 +32,7 @@ public final class Scheduler {
      *
      * @return the current time
      */
-    public int getCurrentTime() {
+    public float getCurrentTime() {
         return this.currentTime;
     }
 
@@ -83,7 +77,7 @@ public final class Scheduler {
      * @param currentTime the current time
      * @throws InterruptedException the interrupted exception
      */
-    public void startingEvent(int currentTime) throws InterruptedException {
+    public void startingEvent(float currentTime) throws InterruptedException {
         int i = 0;
 
         while (i < SchedulerInstance.getNbEvent() && SchedulerInstance.incomingEvent.get(i).getStartingTime() <= currentTime) {
@@ -98,35 +92,13 @@ public final class Scheduler {
      * @throws InterruptedException the interrupted exception
      */
     public void passingTime() throws InterruptedException {
-
-        Duration tick_duration = Duration.ofMillis(1200L);
-        Clock baseClock = Clock.systemUTC();
-        Clock newClock = Clock.systemUTC();
-        LocalTime basetime = LocalTime.now();
-        LocalTime newTime = LocalTime.now();
-
-        while (this.currentTime <= 7200) {
-            if (status == 0) {
-                CoreController.getInstance().Reclock(currentTime);
-                basetime = LocalTime.now();
-                if (basetime.isAfter(newTime)) {
-                    this.startingEvent(this.currentTime);
-                    ++this.currentTime;
-                    newTime = basetime.plusNanos(10000000L);
-                    WaitingList.getInstance().getSizePre().add(WaitingList.getInstance().getPreOrder().size());
-                    WaitingList.getInstance().getSizePost().add(WaitingList.getInstance().getPostOrder().size());
-                }
-            }
+        getInstance().incomingEvent.add(new Debut(getInstance().currentTime));
+        while (getInstance().getNbEvent() != 0) {
+            getInstance().startingEvent(getInstance().getCurrentTime());
+            //TODO: màj des aires
+                float date = getInstance().incomingEvent.get(0).getStartingTime();
+            getInstance().setCurrentTime(date);
         }
-
-        if (WaitingList.getInstance().getPostOrder().size() >= 1
-                || WaitingList.getInstance().getPreOrder().size() >= 1) {
-            CoreController.getInstance().End(1);
-
-        } else {
-            CoreController.getInstance().End(0);
-        }
-        this.currentTime = 7201;
     }
 
     /**
@@ -143,17 +115,8 @@ public final class Scheduler {
      *
      * @param currentTime the current time
      */
-    public void setCurrentTime(int currentTime) {
+    public void setCurrentTime(float currentTime) {
         this.currentTime = currentTime;
-    }
-
-    /**
-     * Set status.
-     *
-     * @param status the status
-     */
-    public void setStatus(int status) {
-        this.status = status;
     }
 
 }

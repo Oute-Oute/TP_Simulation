@@ -1,17 +1,17 @@
-package oldSimu;
+package event;
 
 /**
- * The type oldSimu.Event.
+ * The type event.Event.
  */
 public abstract class Event {
-    private final int startingTime;
+    private final float startingTime;
 
     /**
-     * Instantiates a new oldSimu.Event.
+     * Instantiates a new event.Event.
      *
      * @param startingTime the starting time
      */
-    public Event(int startingTime) {
+    public Event(float startingTime) {
         this.startingTime = startingTime;
     }
 
@@ -20,7 +20,7 @@ public abstract class Event {
      *
      * @return the starting time
      */
-    public int getStartingTime() {
+    public float getStartingTime() {
         return startingTime;
     }
 
