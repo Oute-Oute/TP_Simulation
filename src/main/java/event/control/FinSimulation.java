@@ -7,6 +7,7 @@ import main.java.Event;
 import main.java.Scheduler;
 
 public class FinSimulation extends Event {
+
     /**
      * Instantiates a new main.java.Event.
      *
@@ -21,6 +22,9 @@ public class FinSimulation extends Event {
         Scheduler.getInstance().cleanScheduler();
         double meanWaitingTimeBeforeControl = Controller.getInstance().getControlQueueArea()/ Controller.getInstance().getNbBusEntres();
         double meanWaitingTimeBeforeReparation = Controller.getInstance().getRepairQueueArea()/Controller.getInstance().getNbBusRepares();
-        double ReparationCenterUseRate =Controller.getInstance().getOccupationArea()/(2*160);
+        double ReparationCenterUseRate =Controller.getInstance().getOccupationArea()/(2*getStartingTime());
+        System.out.println("Mean waiting time before control: " + meanWaitingTimeBeforeControl);
+        System.out.println("Mean waiting time before reparation: " + meanWaitingTimeBeforeReparation);
+        System.out.println("Reparation center use rate: " + ReparationCenterUseRate);
     }
 }

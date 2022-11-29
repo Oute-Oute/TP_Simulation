@@ -15,7 +15,6 @@ public class DebutSimulation extends Event {
     @Override
     public void run() {
         // TODO: arrivée bus à Date Simu + exp(1/2)
-
         Controller.getInstance().getPostesReparations().get(0).setIsFree(true);
         Controller.getInstance().getPostesReparations().get(1).setIsFree(true);
         Controller.getInstance().getPosteControle().setFree(true);
