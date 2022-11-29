@@ -44,14 +44,6 @@ public class Controller {
         return controllerInstance;
     }
 
-    public static Controller getControllerInstance() {
-        return controllerInstance;
-    }
-
-    public static void setControllerInstance(Controller controllerInstance) {
-        Controller.controllerInstance = controllerInstance;
-    }
-
     public int getQueueR() {
         return queueR;
     }
