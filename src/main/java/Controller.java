@@ -15,21 +15,9 @@ public class Controller {
     private float repairQueueArea;
     private float occupationArea;
 
-    public int getNbBusEntres() {
-        return nbBusEntres;
-    }
+    private int queueC;
 
-    public void setNbBusEntres(int nbBusEntres) {
-        this.nbBusEntres = nbBusEntres;
-    }
-
-    public int getNbBusRepares() {
-        return nbBusRepares;
-    }
-
-    public void setNbBusRepares(int nbBusRepares) {
-        this.nbBusRepares = nbBusRepares;
-    }
+    private int queueR;
 
     private Controller() {
         this.posteControle = new PosteControle(1);
@@ -62,6 +50,38 @@ public class Controller {
 
     public static void setControllerInstance(Controller controllerInstance) {
         Controller.controllerInstance = controllerInstance;
+    }
+
+    public int getQueueR() {
+        return queueR;
+    }
+
+    public void setQueueR(int queueR) {
+        this.queueR = queueR;
+    }
+
+    public int getQueueC() {
+        return queueC;
+    }
+
+    public void setQueueC(int queueC) {
+        this.queueC = queueC;
+    }
+
+    public int getNbBusEntres() {
+        return nbBusEntres;
+    }
+
+    public void setNbBusEntres(int nbBusEntres) {
+        this.nbBusEntres = nbBusEntres;
+    }
+
+    public int getNbBusRepares() {
+        return nbBusRepares;
+    }
+
+    public void setNbBusRepares(int nbBusRepares) {
+        this.nbBusRepares = nbBusRepares;
     }
 
     public PosteControle getPosteControle() {

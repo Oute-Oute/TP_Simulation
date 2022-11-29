@@ -12,8 +12,8 @@ public void areaUpdate(float D2, float D1) {
         occupation++;
     }
 
-    Controller.getInstance().setControlQueueArea(Controller.getInstance().getControlQueueArea() + (D2 - D1) * Controller.getInstance().getPosteControle().getQueue());
-    Controller.getInstance().setRepairQueueArea(Controller.getInstance().getRepairQueueArea() + (D2 - D1) * (Controller.getInstance().getPostesReparations().get(0).getQueue()+Controller.getInstance().getPostesReparations().get(1).getQueue()));
+    Controller.getInstance().setControlQueueArea(Controller.getInstance().getControlQueueArea() + (D2 - D1) * Controller.getInstance().getQueueC());
+    Controller.getInstance().setRepairQueueArea(Controller.getInstance().getRepairQueueArea() + (D2 - D1) * (Controller.getInstance().getQueueR()));
 
     Controller.getInstance().setOccupationArea(Controller.getInstance().getOccupationArea() + (D2 - D1) * occupation);
     }
