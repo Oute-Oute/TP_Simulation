@@ -2,8 +2,11 @@ package main.java.event.control;
 
 
 
+import main.java.Controller;
 import main.java.Event;
 import main.java.Scheduler;
+
+import javax.naming.ldap.Control;
 
 public class FinSimulation extends Event {
     /**
@@ -18,5 +21,8 @@ public class FinSimulation extends Event {
     @Override
     public void run() {
         Scheduler.getInstance().cleanScheduler();
+        float meanWaitingTimeBeforeControl = Controller.getControllerInstance().getControlQueueArea()/ Controller.getControllerInstance().getNbBusEntres();
+        float meanWaitingTimeBeforeReparation = Controller.getControllerInstance().getRepairQueueArea()/Controller.getControllerInstance().getNbBusRepares();
+        float ReparationCenterUseRate =Controller.getControllerInstance().getOccupationArea()/(2*160);
     }
 }

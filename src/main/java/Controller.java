@@ -7,6 +7,23 @@ public class Controller {
 
     private PosteControle posteControle;
     private ArrayList<PosteReparation> postesReparations;
+
+    public int getNbBusEntres() {
+        return nbBusEntres;
+    }
+
+    public void setNbBusEntres(int nbBusEntres) {
+        this.nbBusEntres = nbBusEntres;
+    }
+
+    public int getNbBusRepares() {
+        return nbBusRepares;
+    }
+
+    public void setNbBusRepares(int nbBusRepares) {
+        this.nbBusRepares = nbBusRepares;
+    }
+
     private int nbBusEntres, nbBusRepares;
 
     //Areas
