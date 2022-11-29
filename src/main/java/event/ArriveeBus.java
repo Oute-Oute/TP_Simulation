@@ -1,4 +1,4 @@
-package main.java.event.control;
+package main.java.event;
 
 import main.java.Controller;
 import main.java.Event;

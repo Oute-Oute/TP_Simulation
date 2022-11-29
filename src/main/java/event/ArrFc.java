@@ -1,4 +1,8 @@
-package main.java;
+package main.java.event;
+
+import main.java.Controller;
+import main.java.Event;
+import main.java.Scheduler;
 
 public class ArrFc extends Event {
 
@@ -16,7 +20,7 @@ public class ArrFc extends Event {
         //TODO aurélie suite 
         Controller.getControllerInstance().setControlQueueArea(Controller.getControllerInstance().getControlQueueArea() + 1);
         if (Controller.getControllerInstance().getPosteControle().isFree()){
-            
+            Scheduler.getInstance().addEvent();
         }
     }
 }
