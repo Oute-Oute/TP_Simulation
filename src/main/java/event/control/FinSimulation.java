@@ -21,8 +21,8 @@ public class FinSimulation extends Event {
     @Override
     public void run() {
         Scheduler.getInstance().cleanScheduler();
-        float meanWaitingTimeBeforeControl = Controller.getControllerInstance().getControlQueueArea()/ Controller.getControllerInstance().getNbBusEntres();
-        float meanWaitingTimeBeforeReparation = Controller.getControllerInstance().getRepairQueueArea()/Controller.getControllerInstance().getNbBusRepares();
-        float ReparationCenterUseRate =Controller.getControllerInstance().getOccupationArea()/(2*160);
+        float meanWaitingTimeBeforeControl = Controller.getInstance().getControlQueueArea()/ Controller.getInstance().getNbBusEntres();
+        float meanWaitingTimeBeforeReparation = Controller.getInstance().getRepairQueueArea()/Controller.getInstance().getNbBusRepares();
+        float ReparationCenterUseRate =Controller.getInstance().getOccupationArea()/(2*160);
     }
 }
