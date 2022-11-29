@@ -1,4 +1,4 @@
-package main.java.event.control;
+package main.java.event;
 
 import main.java.Controller;
 import main.java.Event;
@@ -6,7 +6,7 @@ import main.java.Scheduler;
 
 public class ArriveeFileR extends Event {
 
-    public ArriveeFileR(float startingTime) {
+    public ArriveeFileR(double startingTime) {
         super(startingTime);
     }
     /**

@@ -1,4 +1,4 @@
-package main.java.event.control;
+package main.java.event;
 
 import main.java.Controller;
 import main.java.Event;
@@ -6,7 +6,7 @@ import main.java.Scheduler;
 
 public class AccesReparation extends Event {
 
-    public AccesReparation(float startingTime) {
+    public AccesReparation(double startingTime) {
         super(startingTime);
     }
 
@@ -21,10 +21,5 @@ public class AccesReparation extends Event {
             Scheduler.getInstance().addEvent(new DepartReparation(Scheduler.getInstance().getCurrentTime() + Scheduler.generateRandomUniformNumber(2.1, 4.5)));
         }
     }
-
-    //Procédure AccèsRéparation
-    //1. Décrémenter le nombre de bus dans la File R (QR ←− QR − 1)
-    //2. Réquisitionner un poste dans le centre de réparation (BR ←− BR + 1)
-    //3. Insérer dans l'échéancier un événement DépartRéparation à l'instant DateSimu + U([2.1, 4.5])
 }
 

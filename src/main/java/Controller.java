@@ -11,9 +11,9 @@ public class Controller {
     private int nbBusEntres, nbBusRepares;
 
     //Areas
-    private float controlQueueArea;
-    private float repairQueueArea;
-    private float occupationArea;
+    private double controlQueueArea;
+    private double repairQueueArea;
+    private double occupationArea;
 
     private int queueC;
 
@@ -92,27 +92,27 @@ public class Controller {
         this.postesReparations = postesReparations;
     }
 
-    public float getControlQueueArea() {
+    public double getControlQueueArea() {
         return controlQueueArea;
     }
 
-    public void setControlQueueArea(float controlQueueArea) {
+    public void setControlQueueArea(double controlQueueArea) {
         this.controlQueueArea = controlQueueArea;
     }
 
-    public float getRepairQueueArea() {
+    public double getRepairQueueArea() {
         return repairQueueArea;
     }
 
-    public void setRepairQueueArea(float repairQueueArea) {
+    public void setRepairQueueArea(double repairQueueArea) {
         this.repairQueueArea = repairQueueArea;
     }
 
-    public float getOccupationArea() {
+    public double getOccupationArea() {
         return occupationArea;
     }
 
-    public void setOccupationArea(float occupationArea) {
+    public void setOccupationArea(double occupationArea) {
         this.occupationArea = occupationArea;
     }
 }

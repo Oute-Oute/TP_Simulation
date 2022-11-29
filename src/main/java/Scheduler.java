@@ -16,7 +16,7 @@ import static java.lang.Math.log;
 public final class Scheduler {
     private static Scheduler SchedulerInstance = new Scheduler();
     private final ArrayList<Event> incomingEvent = new ArrayList<>();
-    private float currentTime = 0;
+    private double currentTime = 0;
 
     private Scheduler() {
     }
@@ -51,7 +51,7 @@ public final class Scheduler {
      *
      * @return the current time
      */
-    public float getCurrentTime() {
+    public double getCurrentTime() {
         return this.currentTime;
     }
 
@@ -60,7 +60,7 @@ public final class Scheduler {
      *
      * @param currentTime the current time
      */
-    public void setCurrentTime(float currentTime) {
+    public void setCurrentTime(double currentTime) {
         this.currentTime = currentTime;
     }
 
@@ -123,5 +123,13 @@ public final class Scheduler {
         return event;
     }
 
+    /**
+     * Sets current time.
+     *
+     * @param currentTime the current time
+     */
+    public void setCurrentTime(float currentTime) {
+        this.currentTime = currentTime;
+    }
 
 }

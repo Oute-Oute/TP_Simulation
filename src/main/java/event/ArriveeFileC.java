@@ -11,7 +11,7 @@ public class ArriveeFileC extends Event {
      *
      * @param startingTime the starting time
      */
-    public ArriveeFileC(float startingTime) {
+    public ArriveeFileC(double startingTime) {
         super(startingTime);
     }
 

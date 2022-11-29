@@ -11,7 +11,7 @@ public class ArriveeBus extends Event {
      *
      * @param startingTime the starting time
      */
-    public ArriveeBus(float startingTime) {
+    public ArriveeBus(double startingTime) {
         super(startingTime);
     }
 

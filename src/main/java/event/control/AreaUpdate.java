@@ -3,7 +3,7 @@ package main.java.event.control;
 import main.java.Controller;
 
 public class AreaUpdate {
-public void areaUpdate(float D2, float D1) {
+public void areaUpdate(double D2, double D1) {
     int occupation =0;
     if (Controller.getInstance().getPostesReparations().get(0).isFree()) {
         occupation++;
