@@ -15,10 +15,10 @@ public class AccesReparation extends Event {
         Controller.getInstance().setQueueR(Controller.getInstance().getQueueR() - 1);
         if (Controller.getInstance().getPostesReparations().get(0).isFree()) {
             Controller.getInstance().getPostesReparations().get(0).setIsFree(false);
-            Scheduler.getInstance().addEvent(new DepartReparation(Scheduler.getInstance().getCurrentTime() + Scheduler.generateRandomUniformNumber(2.1, 4.5)));
+            Scheduler.getInstance().addEvent(new DepartReparation(Scheduler.getInstance().getCurrentTime() + Scheduler.generateRandomUniformNumber(2.8, 5.5)));
         } else {
             Controller.getInstance().getPostesReparations().get(1).setIsFree(false);
-            Scheduler.getInstance().addEvent(new DepartReparation(Scheduler.getInstance().getCurrentTime() + Scheduler.generateRandomUniformNumber(2.1, 4.5)));
+            Scheduler.getInstance().addEvent(new DepartReparation(Scheduler.getInstance().getCurrentTime() + Scheduler.generateRandomUniformNumber(2.8, 5.5)));
         }
     }
 }

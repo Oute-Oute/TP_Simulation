@@ -21,7 +21,7 @@ public class DebutSimulation extends Event {
         Controller.getInstance().getPosteControle().setFree(true);
         Controller.getInstance().setQueueC(0);
         Controller.getInstance().setQueueR(0);
-        Scheduler.getInstance().addEvent(new ArriveeBus(Scheduler.getInstance().getCurrentTime() + Scheduler.getInstance().generateRandomExponentialNumber(0.5)));
+        Scheduler.getInstance().addEvent(new ArriveeBus(Scheduler.getInstance().getCurrentTime() + Scheduler.generateRandomExponentialNumber(0.75)));
         Scheduler.getInstance().addEvent(new FinSimulation(160));
 
     }
