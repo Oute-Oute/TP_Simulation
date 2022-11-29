@@ -3,6 +3,7 @@ package main.java.event;
 import main.java.Controller;
 import main.java.Event;
 import main.java.Scheduler;
+import main.java.event.control.ArriveeFileR;
 
 public class DepartControle extends Event {
     /**
