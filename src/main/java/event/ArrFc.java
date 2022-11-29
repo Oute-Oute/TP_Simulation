@@ -17,10 +17,9 @@ public class ArrFc extends Event {
 
     @Override
     public void run() {
-        //TODO aurélie suite 
         Controller.getControllerInstance().setControlQueueArea(Controller.getControllerInstance().getControlQueueArea() + 1);
         if (Controller.getControllerInstance().getPosteControle().isFree()){
-            Scheduler.getInstance().addEvent();
+            Scheduler.getInstance().addEvent(new AccesGc(Scheduler.getInstance().getCurrentTime()));
         }
     }
 }
