@@ -35,12 +35,12 @@ public final class Scheduler {
     }
 
 
-    public static float generateRandomUniformNumber(float min, float max) {
+    public static double generateRandomUniformNumber(double min, double max) {
         Random r = new Random();
-        return min + r.nextFloat() * (max - min);
+        return min + r.nextDouble() * (max - min);
     }
 
-    public static double generateRandomExponentialNumber(float lambda) {
+    public static double generateRandomExponentialNumber(double lambda) {
         Random r = new Random();
         return -(1 / lambda) * log(1 - r.nextDouble());
 
