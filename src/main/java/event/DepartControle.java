@@ -1,6 +1,8 @@
 package main.java.event;
 
+import main.java.Controller;
 import main.java.Event;
+import main.java.Scheduler;
 
 public class DepartControle extends Event {
     /**
@@ -14,6 +16,12 @@ public class DepartControle extends Event {
 
     @Override
     public void run() {
-
+        Controller.getInstance().getPosteControle().setFree(true);
+        if(Controller.getInstance().getQueueC() > 0){
+            Scheduler.getInstance().addEvent(new AccesControle(Scheduler.getInstance().getCurrentTime()));
+        }
+        if(Math.random() < 0.3 ){
+            Scheduler.getInstance().addEvent(new ArriveeFileR(Scheduler.getInstance().getCurrentTime()));
+        }
     }
 }

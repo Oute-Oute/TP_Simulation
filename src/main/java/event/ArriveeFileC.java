@@ -17,8 +17,8 @@ public class ArriveeFileC extends Event {
 
     @Override
     public void run() {
-        Controller.getControllerInstance().getPosteControle().setQueue(Controller.getControllerInstance().getPosteControle().getQueue() + 1);
-        if (Controller.getControllerInstance().getPosteControle().isFree()){
+        Controller.getInstance().setQueueC(Controller.getInstance().getQueueC() + 1);
+        if (Controller.getInstance().getPosteControle().isFree()){
             Scheduler.getInstance().addEvent(new AccesControle(Scheduler.getInstance().getCurrentTime()));
         }
     }
