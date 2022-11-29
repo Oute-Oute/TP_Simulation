@@ -17,8 +17,7 @@ public class AccesControle  extends Event {
     @Override
     public void run() {
         //Décrémenter le nombre de bus dans la File C (QC ←− QC − 1)
-        //TODO attendre le change de l'etat du poste de controle
-        Controller.getInstance().setNbBusEntres(Controller.getInstance().getNbBusEntres()-1);
+        Controller.getInstance().setQueueC(Controller.getInstance().getQueueC() - 1);
 
         //Changer l'état du poste de contrôle (BC ←− OCCUPE)
         Controller.getInstance().getPosteControle().setFree(false);
