@@ -34,12 +34,6 @@ public final class Scheduler {
         return SchedulerInstance;
     }
 
-    /**
-     * Start the simulation
-     */
-    public static void start() {
-        getInstance().passingTime();
-    }
 
     public static float generateRandomUniformNumber(float min, float max) {
         Random r = new Random();
@@ -129,13 +123,5 @@ public final class Scheduler {
         return event;
     }
 
-    /**
-     * Sets current time.
-     *
-     * @param currentTime the current time
-     */
-    public void setCurrentTime(float currentTime) {
-        this.currentTime = currentTime;
-    }
 
 }
