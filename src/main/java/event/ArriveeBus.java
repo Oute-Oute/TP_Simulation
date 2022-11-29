@@ -21,9 +21,7 @@ public class ArriveeBus extends Event {
         // Incrémenter le nombre de bus (NbBus ←− NbBus + 1)
         // Insérer dans l'échéancier un événement ArrivéeFileC à l'instant DateSimu
 
-        //TODO a revoir pour le temps ajouté
-        //TODO changer fonction nbbusentrés
-        Scheduler.getInstance().addEvent(new ArriveeBus(Scheduler.getInstance().getCurrentTime() + 1/2));
+        Scheduler.getInstance().addEvent(new ArriveeBus(Scheduler.getInstance().getCurrentTime() + Scheduler.getInstance().generateRandomExponentialNumber(0.5)));
 
         Controller.getInstance().setNbBusEntres(Controller.getInstance().getNbBusEntres()+1);
 

@@ -24,7 +24,7 @@ public class AccesControle  extends Event {
 
         //Insérer dans l'échéancier un événement DépartContrôle à l'instant DateSimu + U([1/4, 13/12])
         //TODO changer starting time
-        Scheduler.getInstance().addEvent(new DepartControle(Scheduler.getInstance().getCurrentTime() + 1/2));
+        Scheduler.getInstance().addEvent(new DepartControle(Scheduler.getInstance().getCurrentTime() + Scheduler.getInstance().generateRandomUniformNumber(1/4, 13/12)));
 
 
 
