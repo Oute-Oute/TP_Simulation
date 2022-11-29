@@ -4,14 +4,14 @@ package main.java;
  * The type main.java.Event.
  */
 public abstract class Event {
-    private final float startingTime;
+    private final double startingTime;
 
     /**
      * Instantiates a new main.java.Event.
      *
      * @param startingTime the starting time
      */
-    public Event(float startingTime) {
+    public Event(double startingTime) {
         this.startingTime = startingTime;
     }
 
@@ -20,7 +20,7 @@ public abstract class Event {
      *
      * @return the starting time
      */
-    public float getStartingTime() {
+    public double getStartingTime() {
         return startingTime;
     }
 

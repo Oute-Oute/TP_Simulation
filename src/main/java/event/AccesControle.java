@@ -10,7 +10,7 @@ public class AccesControle  extends Event {
      *
      * @param startingTime the starting time
      */
-    public AccesControle(float startingTime) {
+    public AccesControle(double startingTime) {
         super(startingTime);
     }
 
