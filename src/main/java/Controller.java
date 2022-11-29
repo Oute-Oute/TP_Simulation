@@ -13,6 +13,23 @@ public class Controller {
     private float controlQueueArea;
     private float repairQueueArea;
     private float occupationArea;
+
+    public int getNbBusEntres() {
+        return nbBusEntres;
+    }
+
+    public void setNbBusEntres(int nbBusEntres) {
+        this.nbBusEntres = nbBusEntres;
+    }
+
+    public int getNbBusRepares() {
+        return nbBusRepares;
+    }
+
+    public void setNbBusRepares(int nbBusRepares) {
+        this.nbBusRepares = nbBusRepares;
+    }
+
     private Controller() {
         this.posteControle = new PosteControle(1);
         this.postesReparations = new ArrayList<>();

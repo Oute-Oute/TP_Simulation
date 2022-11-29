@@ -25,7 +25,7 @@ public class ArriveeBus extends Event {
         //TODO changer fonction nbbusentrés
         Scheduler.getInstance().addEvent(new ArriveeBus(Scheduler.getInstance().getCurrentTime() + 1/2));
 
-        Controller.getInstance().SetNbBusEntree(Controller.getInstance().GetNbBusEntree()++);
+        Controller.getInstance().setNbBusEntres(Controller.getInstance().getNbBusEntres()+1);
 
         Scheduler.getInstance().addEvent(new ArriveeFileC(Scheduler.getInstance().getCurrentTime()));
 
