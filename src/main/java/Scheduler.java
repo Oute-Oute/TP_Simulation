@@ -1,6 +1,7 @@
 package main.java;
 
 
+import main.java.event.control.AreaUpdate;
 import main.java.event.control.DebutSimulation;
 import java.util.ArrayList;
 
@@ -91,25 +92,10 @@ public final class Scheduler {
         SchedulerInstance.incomingEvent.clear();
     }
 
-    /**
-     * Pass the time in the simulation
-     *
-     */
-    public void passingTime() {
-        getInstance().incomingEvent.add(new DebutSimulation(getInstance().currentTime));
-        while (getInstance().getNbEvent() != 0) {
-            getInstance().startingEvent(getInstance().getCurrentTime());
-            //TODO: màj des aires
-                float date = getInstance().incomingEvent.get(0).getStartingTime();
-            getInstance().setCurrentTime(date);
-        }
-    }
-
-    /**
-     * Start the simulation
-     */
-    public static void start() {
-        getInstance().passingTime();
+    public Event getNextEvent() {
+        Event event = SchedulerInstance.incomingEvent.get(0);
+        SchedulerInstance.incomingEvent.remove(0);
+        return event;
     }
 
     /**
