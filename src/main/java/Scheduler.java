@@ -2,7 +2,11 @@ package main.java;
 
 
 import main.java.event.control.DebutSimulation;
+
 import java.util.ArrayList;
+import java.util.Random;
+
+import static java.lang.Math.log;
 
 
 /**
@@ -30,12 +34,39 @@ public final class Scheduler {
     }
 
     /**
+     * Start the simulation
+     */
+    public static void start() {
+        getInstance().passingTime();
+    }
+
+    public static float generateRandomUniformNumber(float min, float max) {
+        Random r = new Random();
+        return min + r.nextFloat() * (max - min);
+    }
+
+    public static double generateRandomExponentialNumber(float lambda) {
+        Random r = new Random();
+        return -(1 / lambda) * log(1 - r.nextDouble());
+
+    }
+
+    /**
      * Gets current time.
      *
      * @return the current time
      */
     public float getCurrentTime() {
         return this.currentTime;
+    }
+
+    /**
+     * Sets current time.
+     *
+     * @param currentTime the current time
+     */
+    public void setCurrentTime(float currentTime) {
+        this.currentTime = currentTime;
     }
 
     /**
@@ -78,7 +109,7 @@ public final class Scheduler {
      *
      * @param currentTime the current time
      */
-    public void startingEvent(float currentTime){
+    public void startingEvent(float currentTime) {
         int i = 0;
 
         while (i < SchedulerInstance.getNbEvent() && SchedulerInstance.incomingEvent.get(i).getStartingTime() <= currentTime) {
@@ -93,32 +124,14 @@ public final class Scheduler {
 
     /**
      * Pass the time in the simulation
-     *
      */
     public void passingTime() {
         getInstance().incomingEvent.add(new DebutSimulation(getInstance().currentTime));
         while (getInstance().getNbEvent() != 0) {
             getInstance().startingEvent(getInstance().getCurrentTime());
             //TODO: màj des aires
-                float date = getInstance().incomingEvent.get(0).getStartingTime();
+            float date = getInstance().incomingEvent.get(0).getStartingTime();
             getInstance().setCurrentTime(date);
         }
     }
-
-    /**
-     * Start the simulation
-     */
-    public static void start() {
-        getInstance().passingTime();
-    }
-
-    /**
-     * Sets current time.
-     *
-     * @param currentTime the current time
-     */
-    public void setCurrentTime(float currentTime) {
-        this.currentTime = currentTime;
-    }
-
 }
