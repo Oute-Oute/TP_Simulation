@@ -16,7 +16,6 @@ public class ArriveeFileR extends Event {
     @Override
     public void run() {
         Controller.getInstance().setQueueR(Controller.getInstance().getQueueR() + 1);
-        Controller.getInstance().setNbBusRepares(Controller.getInstance().getNbBusRepares() + 1);
         if (Controller.getInstance().getPostesReparations().get(0).isFree() || Controller.getInstance().getPostesReparations().get(1).isFree()) {
             Scheduler.getInstance().addEvent(new AccesReparation(Scheduler.getInstance().getCurrentTime()));
         }

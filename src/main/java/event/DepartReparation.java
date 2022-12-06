@@ -13,6 +13,7 @@ public class DepartReparation extends Event {
     @Override
     public void run() {
         if(!Controller.getInstance().getPostesReparations().get(0).isFree()) {
+            Controller.getInstance().setNbBusRepares(Controller.getInstance().getNbBusRepares() + 1);
             Controller.getInstance().getPostesReparations().get(0).setIsFree(true);
         } else {
             Controller.getInstance().getPostesReparations().get(1).setIsFree(true);

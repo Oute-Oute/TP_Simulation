@@ -20,9 +20,10 @@ public class FinSimulation extends Event {
     @Override
     public void run() {
         Scheduler.getInstance().cleanScheduler();
-        double meanWaitingTimeBeforeControl = Controller.getInstance().getControlQueueArea()/ Controller.getInstance().getNbBusEntres();
-        double meanWaitingTimeBeforeReparation = Controller.getInstance().getRepairQueueArea()/Controller.getInstance().getNbBusRepares();
-        double ReparationCenterUseRate =Controller.getInstance().getOccupationArea()/(2*getStartingTime());
+        double meanWaitingTimeBeforeControl = Controller.getInstance().getControlQueueArea()/ (Controller.getInstance().getNbBusEntres()-Controller.getInstance().getQueueC());
+        double meanWaitingTimeBeforeReparation = Controller.getInstance().getRepairQueueArea()/(Controller.getInstance().getNbBusRepares()-Controller.getInstance().getQueueR());
+        double ReparationCenterUseRate = Controller.getInstance().getOccupationArea()/(2*getStartingTime());
+        System.out.println("Simulation time : "+ Scheduler.getInstance().getCurrentTime());
         System.out.println("Mean waiting time before control: " + meanWaitingTimeBeforeControl);
         System.out.println("Mean waiting time before reparation: " + meanWaitingTimeBeforeReparation);
         System.out.println("Reparation center use rate: " + ReparationCenterUseRate);
