@@ -13,7 +13,7 @@ public class PosteControle {
         return this.free;
     }
 
-    public void setFree(Boolean isFree) {
+    public void setFree(Boolean free) {
         this.free = free;
     }
 

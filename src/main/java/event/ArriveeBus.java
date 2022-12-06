@@ -20,8 +20,7 @@ public class ArriveeBus extends Event {
         // Insérer dans l'échéancier un événement ArrivéeBus à l'instant DateSimu + E(1/2
         // Incrémenter le nombre de bus (NbBus ←− NbBus + 1)
         // Insérer dans l'échéancier un événement ArrivéeFileC à l'instant DateSimu
-
-        Scheduler.getInstance().addEvent(new ArriveeBus(Scheduler.getInstance().getCurrentTime() + Scheduler.generateRandomExponentialNumber(0.75)));
+        Scheduler.getInstance().addEvent(new ArriveeBus(Scheduler.getInstance().getCurrentTime() + Scheduler.generateRandomExponentialNumber(1.33)));
         Controller.getInstance().setNbBusEntres(Controller.getInstance().getNbBusEntres()+1);
         Scheduler.getInstance().addEvent(new ArriveeFileC(Scheduler.getInstance().getCurrentTime()));
 
