@@ -115,4 +115,21 @@ public class Controller {
     public void setOccupationArea(double occupationArea) {
         this.occupationArea = occupationArea;
     }
+
+    public void cleanController() {
+        Controller.getInstance().posteControle = new PosteControle(1);
+        Controller.getInstance().postesReparations = new ArrayList<>();
+
+        Controller.getInstance().postesReparations.add(new PosteReparation(1));
+        Controller.getInstance().postesReparations.add(new PosteReparation(2));
+
+        Controller.getInstance().nbBusEntres = 0;
+        Controller.getInstance().nbBusRepares = 0;
+
+        //Areas
+        Controller.getInstance().controlQueueArea = 0;
+        Controller.getInstance().repairQueueArea = 0;
+        Controller.getInstance().occupationArea = 0;
+    }
 }
+

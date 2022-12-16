@@ -14,11 +14,19 @@ import static java.lang.Math.log;
  * The type main.java.Scheduler.
  */
 public final class Scheduler {
-    private static Scheduler SchedulerInstance = new Scheduler();
-    private final ArrayList<Event> incomingEvent = new ArrayList<>();
-    private double currentTime = 0;
+    private static Scheduler SchedulerInstance;
+    private final ArrayList<Event> incomingEvent;
+    private double currentTime;
+
+    private double welchTime;
+
+    private ArrayList<Double> dataByColumns = new ArrayList<Double>();
+
 
     private Scheduler() {
+        this.incomingEvent = new ArrayList<>();
+        this.currentTime = 0;
+        this.welchTime = 0;
     }
 
     /**
@@ -63,6 +71,20 @@ public final class Scheduler {
     public void setCurrentTime(double currentTime) {
         this.currentTime = currentTime;
     }
+
+    public double getWelchTime() {
+        return this.welchTime;
+    }
+
+    public void setWelchTime(double welchTime) {
+        this.welchTime = welchTime;
+    }
+
+    public ArrayList<Double> getDataByColumns() {
+        return this.dataByColumns;
+    }
+
+
 
     /**
      * Gets the number of main.java.event.
@@ -119,6 +141,11 @@ public final class Scheduler {
 
     public Event getNextEvent() {
         Event event = SchedulerInstance.incomingEvent.get(0);
+        if(event.getStartingTime()>getWelchTime()+1) {
+            setWelchTime(event.getStartingTime());
+            dataByColumns.add(event.getStartingTime());
+
+        }
         SchedulerInstance.incomingEvent.remove(0);
         return event;
     }
@@ -132,4 +159,9 @@ public final class Scheduler {
         this.currentTime = currentTime;
     }
 
+    public void resetScheduler() {
+        SchedulerInstance.incomingEvent.clear();
+        SchedulerInstance.currentTime = 0;
+        SchedulerInstance.welchTime = 0;
+    }
 }
