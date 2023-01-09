@@ -37,6 +37,11 @@ public class Controller {
 
     }
 
+
+    public void cleanController() {
+        controllerInstance = null;
+    }
+
     public static Controller getInstance() {
         if (controllerInstance == null) {
             controllerInstance = new Controller();
